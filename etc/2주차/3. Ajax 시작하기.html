@@ -1,0 +1,68 @@
+$.ajax({
+  type: "GET", // GET 방식으로 요청한다.
+  url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+  data: {}, // 요청하면서 함께 줄 데이터 (GET 요청시엔 비워두세요)
+  success: function(response){ // 서버에서 준 결과를 response라는 변수에 담음
+    console.log(response) // 서버에서 준 결과를 이용해서 나머지 코드를 작성
+  }
+})
+
+여기서 response라는 변수에 결과를 담는 것은 그냥 외워야 함. 불변함
+
+결과가 어떻게 response에 들어가나요? → 받아 들이셔야 합니다..!
+(대부분의 개발자들도 내부 원리는 코드를 안 뜯어봐서 몰라요.^^;;)
+
+
+$.ajax({
+  type: "GET",
+  url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+  data: {},
+  success: function(response){
+		// 값 중 도봉구의 미세먼지 값만 가져와보기
+		let dobong = response["RealtimeCityAir"]["row"][11]; 도봉구는 11번째 row임
+		let gu_name = dobong['MSRSTE_NM']; 그 11번째 row인 도봉구의 구이름을 gu_name으로 지정 
+		let gu_mise = dobong['IDEX_MVL']; 미세먼지를 gu_mise로 지정
+		console.log(gu_name, gu_mise); 구이름과 미세먼지값을 표시
+  }
+})
+
+
+반복문을 통해 구이름과 미세먼지값 꺼내기
+
+$.ajax({
+  type: "GET",
+  url: "http://openapi.seoul.go.kr:8088/6d4d776b466c656533356a4b4b5872/json/RealtimeCityAir/1/99",
+  data: {},
+  success: function (response) {
+    let mise_list = response["RealtimeCityAir"]["row"];
+    for (let i = 0; i < mise_list.length; i++) {
+        여기서 반복문 사용 및 쓰는 법 외우기
+      let mise = mise_list[i];     즉 이것을 풀어서 쓴다면 mise  = mise_list[i] = response["RealtimeCityAir"]["row"];
+      let gu_name = mise["MSRSTE_NM"]; 
+      let gu_mise = mise["IDEX_MVL"];
+      console.log(gu_name, gu_mise);
+    }
+  },
+});
+
+
+참고로 API 값은
+
+RealtimeCityAir: {
+list_total_count: 25,
+RESULT: {},
+row: [
+{
+MSRDT: "202005302300",
+MSRRGN_NM: "도심권",
+MSRSTE_NM: "중구",
+PM10: 29,
+PM25: 26,
+O3: 0.047,
+NO2: 0.021,
+CO: 0.4,
+SO2: 0.003,
+IDEX_NM: "보통",
+IDEX_MVL: 69,
+ARPLT_MAIN: "PM25"
+},

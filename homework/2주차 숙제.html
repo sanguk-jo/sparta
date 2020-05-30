@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+
+  <title>상품 상세페이지</title>
+
+  <script>
+    function hey() {
+      alert('주문이 완료되었습니다');
+    }
+    
+  </script>
+  
+  <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Nanum+Myeongjo&family=Noto+Sans+KR:wght@500&display=swap" rel="stylesheet">
+ 
+  <style>
+    * {
+      font-family: !important; 'Nanum Myeongjo', serif;
+      font-family: !important; 'Do Hyeon', sans-serif;
+      font-family: !important; 'Noto Sans KR', sans-serif;
+    }
+    .button_wrapper{
+      text-align: center;
+    }
+    /* .margin-top {
+       margin-top: !important; 20px; 
+    } */
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <nav class="navbar navbar-light bg-light">
+      <a class="navbar-brand" href="#">
+        <img src="data:image/png;base64,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" width="30" height="30" class="d-inline-block align-top"
+          alt="">
+        NIKE
+      </a>
+    </nav>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100"
+            src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/CT4526-100/9a432d9c-0e5d-4e10-bf9a-e6c2056b876a_primary.jpg?gallery"
+            alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100"
+            src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/CT4526-100/54272e94-7097-4d7a-8b1e-117d21ff1456_2.jpg?gallery"
+            alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100"
+            src="https://static-breeze.nike.co.kr/kr/ko_kr/cmsstatic/product/CT4526-100/47d55820-f006-42b2-8886-f7b9974a5d8d_3.jpg?gallery"
+            alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+  
+
+  <h1>
+    나이키 에어맥스 97
+    <small class="text-muted">가격:209,000원/개</small>
+  </h1>
+  <p><strong>거리에서 날다</strong></br>러닝계를 뒤흔들었던 OG를 재해석한 나이키 에어맥스 97이 클래식한 디자인을 새롭게 선보입니다. 메모리얼데이 퍼레이드를 연상케 하는 흰색과 화사한
+      <mark>스카이 블루 컬러의 밑창이</mark> 돋보입니다. 여름의 감성을 뽐내며 스타일리시하게 거리를 누비세요.
+  </p>
+  <div class="info-temp">
+    "달러-원 환율:"
+    <span id="exchange"></span>
+  </div>
+    <!-- <div class="margin-top"> -->
+      <h1>
+        주문하기
+      </h1>
+      <div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">주문자 이름</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <label class="input-group-text" for="inputGroupSelect01">수량</label>
+          </div>
+          <select class="custom-select" id="inputGroupSelect01">
+            <option selected>수량을 선택하세요</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">주소</span>
+          </div>
+          <input type="text" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text" id="inputGroup-sizing-default">전화번호</span>
+          </div>
+          <input type="number" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default">
+        </div>
+
+        <div class="button_wrapper">
+          <button onclick="hey()" type="button" class="btn btn-primary">주문하기</button>
+        </div>
+      </div>
+
+</html>

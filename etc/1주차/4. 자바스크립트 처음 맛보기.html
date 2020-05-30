@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+    <title>스파르타코딩클럽 | 부트스트랩 연습하기</title>
+
+    <!-- 구글폰트 -->
+    <link href="https://fonts.googleapis.com/css?family=Stylish&display=swap" rel="stylesheet">
+
+    <!-- style -->
+    <style type="text/css">
+        * {
+            font-family: 'Stylish', sans-serif;
+        }
+
+        .wrap {
+            width: 900px;
+            margin: auto;
+        }
+
+        .comment {
+            color: blue;
+            font-weight: bold;
+        }
+
+        #post-box {
+            width: 500px;
+            margin: 20px auto;
+            padding: 50px;
+            border: black solid;
+            border-radius: 5px;
+        }
+    </style>
+    
+    <script>
+        function hey(){
+            alert('안녕!')
+        }
+    </script>
+
+    <!-- head안에는 CSS인 <style></style> 과 자바스크립트인 <script></script> 가 들어간다 -->
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="jumbotron">
+            <h1 class="display-4">나홀로 링크 메모장!</h1>
+            <p class="lead">중요한 링크를 저장해두고, 나중에 볼 수 있는 공간입니다</p>
+            <hr class="my-4">
+            <p class="lead">
+                <a class="btn btn-primary btn-lg" href="#" role="button">포스팅박스 열기</a>
+            </p>
+        </div>
+        <div class="form-post" id="post-box">
+            <div>
+                <div class="form-group">
+                    <label for="exampleFormControlInput1">아티클 URL</label>
+                    <input class="form-control" placeholder="">
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">간단 코멘트</label>
+                    <textarea class="form-control" rows="2"></textarea>
+                </div>
+                <button type="button" class="btn btn-primary" onclick="hey()">기사저장</button>
+
+                <!-- onclick="hey()"를 새로 넣어주고 위에 <script></script>에 hey라는 함수에 관한 정의를 해놓음 -->
+
+                <!-- 참고로 list는 []이고 dictionary는 {} 임 -->
+
+
+
+            <!-- // 함수를 정의하기
+                function check_adult(person) {
+                if (person['age'] > 20){
+                return true;
+                } else {
+                return false;
+                }
+                }
+
+                 여기서 person['age'] 에서 []을 쓴 이유는 밑에 name과 age는 list이기 때문임
+
+                // 함수를 사용하기
+                let person = {'name':'bob','age':24}
+                let result = check_adult(person);
+                result // true -->
+
+
+            <!-- 반복문에 대해
+
+            1.  let people = ['철수','영희','민수','형준','기남','동희']
+
+                // 이렇게 하면 리스트의 모든 원소를 한번에 출력할 수 있겠죠?
+                // i가 1씩 증가하면서, people의 원소를 차례대로 불러올 수 있게 됩니다.
+                
+                for (let i = 0 ; i < people.length ; i++) { 
+                    console.log(people[i])
+                }
+
+                여기서 ()안의 뜻은 i를 0부터 시작해서 people이라는 이름으로 정의한 리스트의 숫자(6개)까지 하나씩증가시키면(i++) people 함수의 i번째 'people'으로 나타내어라 즉 콘솔 뒤 ()안의 peole[0]은 철수, peole[1]은 영희
+
+                그러면
+
+                철수
+                영희
+                민수
+                형준
+                기남
+                동희
+
+                가 나옴
+
+            2. let scores = [
+                {'name':'철수', 'score':90},
+                {'name':'영희', 'score':85},
+                {'name':'민수', 'score':70},
+                {'name':'형준', 'score':50},
+                {'name':'기남', 'score':68},
+                {'name':'동희', 'score':30},
+                
+                ]
+
+                이렇게 하면
+
+                for (let i = 0 ; i < scores.length ; i++) {
+                    console.log(scores[i]);
+                }
+
+                여기서 ()안의 뜻은 i를 0부터 시작해서 scores이라는 이름으로 정의한 리스트의 숫자(6개)까지 하나씩증가시키면(i++) scores 함수의 i번째 'scores'으로 나타내어라 즉 콘솔 뒤 ()안의 scores[0]은 {name: "철수", score: 90}, scores[1]은 {name: "영희", score: 85}
+
+                그러면
+
+                {name: "철수", score: 90}
+                {name: "영희", score: 85}
+                {name: "민수", score: 70}
+                {name: "형준", score: 50}
+                {name: "기남", score: 68}
+                {name: "동희", score: 30}
+
+                가 나옴
+
+
+            3.  제일 중요!!!
+            
+                let scores = [
+                {'name':'철수', 'score':90},
+                {'name':'영희', 'score':85},
+                {'name':'민수', 'score':70},
+                {'name':'형준', 'score':50},
+                {'name':'기남', 'score':68},
+                {'name':'동희', 'score':30},
+                
+                ]
+
+                이렇게 하면
+
+                for (let i = 0 ; i < scores.length ; i++) {
+                    if (scores[i]['score'] < 70) {
+                        console.log(scores[i]['name']);
+                    }
+                }
+
+                여기서 ()안의 뜻은 i를 0부터 시작해서 scores이라는 이름으로 정의한 리스트의 숫자(6개)까지 하나씩증가시키면(i++) scores의 함수의 i번쨰 'name'으로 나타내어라 즉 콘솔 뒤 ()안의 scores[0][name]은 첫번째인 {name: "철수", score: 90} 여기에서 name을 꺼내라는 뜻
+
+                그러면
+
+                형준
+                기남
+                동희
+
+                가 나옴
+ -->
+
+
+
+
+
+            </div>
+        </div>
+        <div class="card-columns">
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+            <div class="card">
+                <img class="card-img-top"
+                    src="https://www.eurail.com/content/dam/images/eurail/Italy%20OCP%20Promo%20Block.adaptive.767.1535627244182.jpg"
+                    alt="Card image cap">
+                <div class="card-body">
+                    <a href="#" class="card-title">여기 기사 제목이 들어가죠</a>
+                    <p class="card-text">기사의 요약 내용이 들어갑니다. 동해물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산...</p>
+                    <p class="card-text comment">여기에 코멘트가 들어갑니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

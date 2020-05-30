@@ -1,0 +1,44 @@
+<!-- 1. 합을 구하는 반복문
+2. 배열에서 원소의 갯수를 세기
+3. 미세먼지의 값이 40미만인 구 이름
+4. 자전거가 5개 이하인 정류장의 이름을 출력하기
+
+let bikes = [
+  {
+    rackTotCnt: "7",
+    stationName: "101. (구)합정동 주민센터",
+    parkingBikeTotCnt: "4",
+    shared: "14",
+    stationLatitude: "37.54956055",
+    stationLongitude: "126.90575409",
+    stationId: "ST-3",
+  },
+
+  위와 같은 데이터가 있다
+
+  for (let i = 0; i < bikes.length; i++) {               0부터 시작하고, length 까지 반복한다, i++는 i를 하나씩 증가시킨다는 뜻 
+	if (bikes[i]['parkingBikeTotCnt'] < 5) {             만약 bikes의 i번재 {}의 parkingBikeTotCnt가 5보다 작으면
+        console.log(bikes[i]['stationName'])]            bikes의 i번쨰 {}의 stationName을 보여라
+  }           
+}
+
+그러나 stationName 에 더해서 몇 개있는지 parkingBikeToCnt 를 옆에 찍어주고 싶다면
+
+for (let i = 0; i < bikes.length; i++) {             
+	if (bikes[i]['parkingBikeTotCnt'] < 5) {             
+        console.log(bikes[i]['stationName'], bikes[i]['parkingBikeToCnt'])          
+  }           
+}
+
+이렇게 해주면 된다
+
+그러나 더 간단히 해준다면 console.log 위에 함수를 두개 만들어준다 
+
+for (let i = 0; i < bikes.length; i++) {             
+	if (bikes[i]['parkingBikeTotCnt'] < 5) {  
+        let name = bikes[i]['stationName']
+        let count = bikes[i]['parkingBikeToCnt']          
+        console.log(name, count)          
+  }           
+}
+ -->
